@@ -1,0 +1,80 @@
+<mvc:View
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="iba.practice.controller.Users"
+	xmlns="sap.m">
+	<Page
+		id="rolesPage"
+		showSubHeader="false"
+		showNavButton="true"
+		navButtonPress="onNavBack"
+		title="Users">
+		
+		<Table
+			id="idUsersTable"
+			items="{/Users}"
+			growing="true"   
+       		mode="MultiSelect" 
+			growingThreshold="50"
+			growingScrollToLoad="true">
+			
+		<headerToolbar>
+				<OverflowToolbar id="otbSubheader">
+					<Button
+							text="{i18n>USERS_ADD}"
+							press="addUser"
+							icon="sap-icon://add" />
+							
+					<Button
+							text="{i18n>USERS_EDIT}"
+							press="EditUser"
+							icon="sap-icon://user-edit" />
+					<Button
+							text="{i18n>USERS_DELETE}"
+							press="DelUser"
+							icon="sap-icon://delete" />	
+					<Button
+							text="Change"
+							press="revName"
+							icon="" />		
+					<SearchField id="searchField" liveChange="onFilter">
+						<layoutData>
+						<OverflowToolbarLayoutData minWidth="200px" maxWidth="300px" shrinkable="true"/></layoutData>
+					</SearchField>
+					<Select id="idSelect" 
+							change="onSelectChange" 
+							items="{path: '/State'}"> 
+						
+            			<core:Item key="{id}" text="{value}" /> 
+            			
+        			</Select> 
+						
+				</OverflowToolbar>
+				
+		</headerToolbar>
+		
+			<columns>
+                <Column width="20%">
+					<Text text="E-mail" />
+				</Column>
+				<Column width="20%">
+					<Text text="Name" />
+				</Column>
+				<Column>
+					<Text text="Adress" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active">
+					<cells>
+                        <Text text="{Email}" />
+						<Text id="name" text="{parts:[{path:'Firstname'},{path:'Lastname'},{path: 'id'}],
+												formatter: '.formatText'}" />
+						<Text text="{Address}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

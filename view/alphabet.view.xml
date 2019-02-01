@@ -1,0 +1,37 @@
+<mvc:View
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="iba.practice.controller.Alphabet"
+	xmlns="sap.m">
+	<Page
+		id="rolesPage"
+		showSubHeader="false"
+		showNavButton="true"
+		navButtonPress="onNavBack"
+		title="Alphabet">
+
+		<Table
+			id="idAlphabetTable"
+			items="{/Alphabet}"
+			growing="true"
+			growingThreshold="50"
+			growingScrollToLoad="true">
+			<columns>
+				<Column width="20%">
+					<Text text="Letter" />
+				</Column>
+				<Column>
+					<Text text="Pronunciation" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active">
+					<cells>
+						<Text text="{Letter}" />
+						<Text text="{Pronunciation}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

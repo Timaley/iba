@@ -1,0 +1,137 @@
+{  
+   "_version":"1.3.0",
+   "sap.app":{  
+      "_version":"1.3.0",
+      "id":"iba.practice",
+      "type":"application",
+      "i18n":"i18n/i18n.properties",
+      "title":"{{appTitle}}",
+      "description":"{{appDescription}}",
+      "applicationVersion":{  
+         "version":"1.0.0"
+      },
+      "dataSources":{  
+         "mainService":{  
+            "uri":"/",
+            "type":"OData",
+            "settings":{  
+               "odataVersion":"2.0",
+               "localUri": "service/metadata.xml"
+            }
+         }
+      }
+   },
+   "sap.ui":{  
+      "_version":"1.3.0",
+      "technology":"UI5",
+      "deviceTypes":{  
+         "desktop":true,
+         "tablet":true,
+         "phone":true
+      },
+      "supportedThemes":[  
+         "sap_bluecrystal"
+      ]
+   },
+   "sap.ui5":{  
+      "_version":"1.2.0",
+      "rootView":{  
+         "viewName":"iba.practice.view.app",
+         "type":"XML",
+         "id":"app"
+      },
+      "resources":{  
+         "css":[  
+         ]
+      },
+      "autoPrefixId":true,
+      "dependencies":{  
+         "minUI5Version":"1.34",
+         "libs":{  
+            "sap.ui.core":{  
+               "minVersion":"1.34.0"
+            },
+            "sap.m":{  
+               "minVersion":"1.34.0"
+            },
+            "sap.ui.layout":{  
+               "minVersion":"1.34.0"
+            }
+         }
+      },
+      "contentDensities":{  
+         "compact":true,
+         "cozy":true
+      },
+      "models":{  
+         "":{  
+            "dataSource": "mainService",
+            "settings":{  
+               "defaultBindingMode":"TwoWay"
+            },
+            "useBatch":true
+         },
+         "i18n":{  
+            "type":"sap.ui.model.resource.ResourceModel",
+            "settings":{  
+               "bundleName":"iba.practice.i18n.i18n"
+            }
+         }
+      },
+      "routing":{  
+         "config":{  
+            "routerClass":"sap.m.routing.Router",
+            "viewType":"XML",
+            "viewPath":"iba.practice.view",
+            "controlId":"appId",
+            "controlAggregation":"pages",
+            "transition":"slide",
+            "bypassed":{  
+               "target":"notFound"
+            }
+         },
+         "routes":[  
+            {  
+               "pattern":"",
+               "name":"home",
+               "target":"home"
+            },
+            {  
+                "pattern" : "alphabet",
+                "name" : "alphabet",
+                "view" : "alphabet",
+                "viewId" : "alphabetView",
+                "viewLevel" : 2,
+                "targetAggregation" : "pages"
+            },
+            {  
+                "pattern" : "Users",
+                "name" : "Users",
+                "view" : "Users",
+                "viewId" : "UsersView",
+                "viewLevel" : 3,
+                "targetAggregation" : "pages"
+                }
+         ],
+         "targets":{  
+            "toolPage":{  
+               "viewName":"toolPage",
+               "viewLevel":1
+            },
+            "home":{  
+               "parent":"toolPage",
+               "viewName":"home",
+               "viewLevel":2,
+               "controlId":"pageContainer",
+               "controlAggregation":"pages"
+            },
+            "notFound":{  
+               "viewName":"NotFound",
+               "transition":"show"
+            }
+         }
+      }
+   }
+}
+
+

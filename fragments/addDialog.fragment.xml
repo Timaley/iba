@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
+	<Dialog title="Add User" id="dialogAdd">
+		<Panel width="auto" class="sapUiMediumMargin">
+			<content>
+			<Label text="E-mail" required="true" />
+			<Input id="addEmail"  value="{noteModel>/Email}" placeholder="E-mail" />
+			<Label text="First Name" required="true"/>
+			<Input id="addFirstName" value="{noteModel>/Firstname}" placeholder="First Name"/>
+			<Label text="Last Name" required="true"/>
+			<Input id="addLastName" value="{noteModel>/Lastname}" placeholder="Last Name"/>
+			<Label text="Address" required="true"/>
+			<Input id="addAddress" value="{noteModel>/Address}" placeholder="Address"/>
+		</content>
+		</Panel>
+		<beginButton>
+			<Button id="addBtn" text="Add" press="addNote" type = "Accept"/>	
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="closeDialog" type = "Reject" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

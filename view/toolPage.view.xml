@@ -1,0 +1,106 @@
+<core:View
+	height="100%"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:tnt="sap.tnt"
+	controllerName="iba.practice.controller.toolPage">
+
+	<tnt:ToolPage id="toolPage">
+		<tnt:header>
+			<tnt:ToolHeader class="ToolHeader">
+				
+				<Button
+					icon="sap-icon://menu2"
+					type="Transparent"
+					press="handleMenuButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+
+				<Button
+					icon="sap-icon://home"
+					text="{i18n>TOOLPAGE_HOME}"
+					type="Transparent"
+					press="handleHomeButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+				<ToolbarSpacer width="30px" />
+
+				<ToolbarSpacer>
+					<layoutData>
+						<OverflowToolbarLayoutData
+							priority="NeverOverflow"
+							minWidth="20px" />
+					</layoutData>
+				</ToolbarSpacer>
+				<Button
+					id="currentUserButton"
+					icon="sap-icon://account"
+					type="Transparent"
+					press="handleCurrentUserButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData
+							class="test"
+							priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header>
+
+
+
+		<tnt:sideContent>
+			<tnt:SideNavigation
+				expanded="true"
+				itemSelect="onItemSelect">
+				<tnt:NavigationList
+					items="{
+						path: 'toolPage>/navigation',
+						templateShareable: false
+						}"> <!-- templateShareable VERY EXTREAMLY IMPORTANNT!!!!!!!!!! Find explanation -->
+					<tnt:NavigationListItem
+						text="{toolPage>title}"
+						icon="{toolPage>icon}"
+						enabled="{toolPage>enabled}"
+						expanded="{toolPage>expanded}"
+						hasExpander="false"
+						items="{
+								path:'toolPage>items',
+								templateShareable: false
+							}"
+						key="{toolPage>key}">
+						
+
+						<tnt:NavigationListItem
+							text="{toolPage>title}"
+							key="{toolPage>key}"
+							enabled="{toolPage>enabled}" />
+					</tnt:NavigationListItem>
+					
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList
+						items="{
+								path: 'toolPage>/fixedNavigation',
+								templateShareable: false
+							}">
+						<tnt:NavigationListItem
+							text="{toolPage>title}"
+							icon="{toolPage>icon}"
+							key="{toolPage>key}">
+						</tnt:NavigationListItem>
+						
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+
+		<tnt:mainContents>
+			<NavContainer id="pageContainer"></NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+
+</core:View>

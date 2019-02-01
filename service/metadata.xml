@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+	xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" 
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="iba.practice.service"
+			sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+
+<!-- { EntityTypes -->
+			<EntityType Name="Alphabet" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Letter" />
+				</Key>
+				<Property Name="Letter"   Type="Edm.String"  Nullable="false" MaxLength="1" />
+				<Property Name="Pronunciation"  Type="Edm.String" Nullable="false" MaxLength="100" />
+			</EntityType>
+
+			<EntityType Name="Users" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Email" />
+				</Key>
+				<Property Name="Email"   Type="Edm.String"  Nullable="false" MaxLength="100" />
+				<Property Name="Firstname"  Type="Edm.String" Nullable="false" MaxLength="100" />
+				<Property Name="Lastname"  Type="Edm.String" Nullable="false" MaxLength="100" />
+				<Property Name="Address"  Type="Edm.String" Nullable="false" MaxLength="100" />
+			</EntityType>
+			<EntityType Name="State" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="id" />
+				</Key>
+				<Property Name="id"   Type="Edm.String"  Nullable="false" MaxLength="100" />
+				<Property Name="value"   Type="Edm.String"  Nullable="false" MaxLength="100" />
+			</EntityType>
+<!--} EntityTypes -->
+
+
+<!-- { AssociationSet -->
+<!--} AssociationSet -->
+
+
+<!-- { EntityContainers -->
+			<EntityContainer Name="IBAFarming_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Alphabet" EntityType="iba.practice.service.Alphabet" sap:content-version="1" />
+			</EntityContainer>
+			<EntityContainer Name="IBAFarming_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Users" EntityType="iba.practice.service.Users" sap:content-version="1" />
+			</EntityContainer>
+			<EntityContainer Name="IBAFarming_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="State" EntityType="iba.practice.service.State" sap:content-version="1" />
+			</EntityContainer>
+<!-- } EntityContainers -->
+
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>    

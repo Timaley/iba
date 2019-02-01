@@ -1,0 +1,50 @@
+  [    
+      {
+        "Email" : "john@doe.com",
+        "Firstname" : "John",
+        "Lastname" : "Doe",
+        "Address" : "New York, USA"
+      },
+      {
+        "Email" : "peter@smith.com",
+        "Firstname" : "Peter",
+        "Lastname" : "Smith",
+        "Address" : "Paris, France"
+      },
+      {
+        "Email" : "bond@007.com",
+        "Firstname" : "James",
+        "Lastname" : "Bond",
+         "Address" : "Liverpool, UK"
+      },
+      {
+        "Email" : "bond@vitor.com",
+        "Firstname" : "Victor",
+        "Lastname" : "Bond",
+        "Address" : "Gorod, Strana"
+      },
+      {
+        "Email" : "john@adomson.com",
+        "Firstname" : "John",
+        "Lastname" : "Adomson",
+        "Address" : "London, UK"
+      },
+      {
+        "Email" : "peter@gmail.com",
+        "Firstname" : "Peter",
+        "Lastname" : "Crauch",
+        "Address" : "Hamburg, Germany"
+      },
+      {
+        "Email" : "milk@master.com",
+        "Firstname" : "Cat",
+        "Lastname" : "Matroskin",
+        "Address" : "Liverpool, UK"
+      },
+      {
+        "Email" : "randomr@person.com",
+        "Firstname" : "Random",
+        "Lastname" : "Person",
+        "Address" : "Random, Place"
+      }
+]
